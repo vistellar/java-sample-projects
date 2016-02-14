@@ -1,12 +1,15 @@
 package org.weixing.spring.mybatis.domain;
 
+import java.io.Serializable;
+
 /**
  * @author weixing
  */
-public class User {
+public class User implements Serializable {
     private String id;
     private String username;
     private String password;
+    private Group group;
 
     public String getId() {
         return id;
@@ -32,12 +35,21 @@ public class User {
         this.password = password;
     }
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", group=" + group +
                 '}';
     }
 }

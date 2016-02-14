@@ -4,15 +4,20 @@
 
     <!-- http://mybatis.org/mybatis-3/sqlmap-xml.html -->
 
+    <resultMap id="user" type="User">
+        <result column="group_id" property="group.id"/>
+        <result column="group_name" property="group.name"/>
+    </resultMap>
+
     <!-- enable cache data -->
     <cache eviction="FIFO" size="1000"/>
 
-    <select id="getUserById" resultType="User">
+    <select id="getUserById" resultMap="user">
         SELECT *
         FROM users WHERE id = #{id}
     </select>
 
-    <select id="getUsers" resultType="User">
+    <select id="getUsers" resultMap="user">
         SELECT *
         FROM users
     </select>
