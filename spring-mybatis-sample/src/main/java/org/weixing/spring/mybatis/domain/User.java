@@ -10,6 +10,7 @@ public class User implements Serializable {
     private String username;
     private String password;
     private Group group;
+    private Level level;
 
     public String getId() {
         return id;
@@ -50,6 +51,7 @@ public class User implements Serializable {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", group=" + group +
+                ", level=" + level +
                 '}';
     }
 }
