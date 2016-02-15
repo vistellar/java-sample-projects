@@ -3,6 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <!--http://www.mybatis.org/mybatis-3/configuration.html-->
+
+    <typeAliases>
+        <!--Specify a package where MyBatis will search for beans-->
+        <package name="org.weixing.spring.mybatis.domain"/>
+        <!--A type alias is simply a shorter name for a Java type-->
+        <!--<typeAlias alias="User" type="org.weixing.spring.mybatis.domain.User"-->
+    </typeAliases>
     <typeHandlers>
         <typeHandler handler="org.weixing.spring.mybatis.LevelTypeHandler"/>
     </typeHandlers>
