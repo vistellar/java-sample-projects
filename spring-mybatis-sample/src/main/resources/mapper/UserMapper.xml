@@ -21,4 +21,12 @@
         SELECT *
         FROM users
     </select>
+
+    <update id="updateUser">
+        UPDATE users
+        SET
+        <if test="password != null">password = #{password},</if>
+        username = #{username}
+        WHERE id = #{id}
+    </update>
 </mapper>

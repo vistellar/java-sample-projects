@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.weixing.spring.mybatis.domain.User;
 import org.weixing.spring.mybatis.service.UserService;
 
 /**
@@ -22,5 +23,13 @@ public class Application implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
         System.out.println(userService.getUsers());
+
+        User user = new User();
+        user.setId("1");
+        user.setUsername("test");
+        System.out.println(userService.updateUser(user));
+
+        user.setId("2");
+        System.out.println(userService.updateUser(user));
     }
 }

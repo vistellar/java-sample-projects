@@ -23,4 +23,8 @@ public class UserService {
     public List<User> getUsers() {
         return sqlSessionTemplate.selectList("getUsers");
     }
+
+    public boolean updateUser(User user) {
+        return sqlSessionTemplate.update("updateUser", user) != 0;
+    }
 }
