@@ -1,5 +1,8 @@
 .*
 
 # IntelliJ IDEA
-target/
 *.iml
+target/
+
+# spring
+logs/
